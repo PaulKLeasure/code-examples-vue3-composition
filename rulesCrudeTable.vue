@@ -265,7 +265,7 @@ export default {
     };
 
     const editTagbotRule = ruleIn => {
-      console.log("EDIT editTagbotRule: ", JSON.parse(JSON.stringify(ruleIn)));
+      //console.log("EDIT editTagbotRule: ", JSON.parse(JSON.stringify(ruleIn)));
       individualRule.value = JSON.parse(JSON.stringify(ruleIn));
       tagbotRuleDialog.value = true;
       tagbotCrudMode.value = "UPDATE";
@@ -289,12 +289,12 @@ export default {
       //let isProxy = dataIn[1];// Vue JS make sthis a Proxy
       // TRICK to make Proxy readable as an object
       //let dat = JSON.parse(JSON.stringify(isProxy));
-      console.log("updateTagbotMapping() crudType:", crudType);
-      console.log("updateTagbotMapping() DATA:", dat);
+      //console.log("updateTagbotMapping() crudType:", crudType);
+      //console.log("updateTagbotMapping() DATA:", dat);
 
       if (crudType === "CREATE") {
         // CREATE this rule via API
-        console.log("NEW DATA: ", dat);
+        //console.log("NEW DATA: ", dat);
         // Change the mode object to just a mode ID
         dat.mode = dat.mode.id;
         tagbotRuleDialog.value = false;
@@ -329,20 +329,20 @@ export default {
       }
 
       if (crudType === "UPDATE") {
-        console.log("updateTagbotMapping() crudType:", crudType);
+        //console.log("updateTagbotMapping() crudType:", crudType);
         tagbotRuleDialog.value = false;
         tagbotCrudMode.value = "";
         individualRule.value = {};
         // Change the mode object to just a mode ID
         dat.mode = dat.mode.id;
-        console.log("NEW DATA: ", dat);
+        //console.log("NEW DATA: ", dat);
         // UPDATE this rule via API
         return TagbotService.updateTagbotMappingsById(dat)
           .then(response => {
-            console.log(
-              "TagbotService.updateTagbotMappingsById(" + dat + "):",
-              response.data
-            );
+            //console.log(
+            //  "TagbotService.updateTagbotMappingsById(" + dat + "):",
+            //  response.data
+            //);
             if (response.data.success) {
               messages.value.push({
                 severity: "success",
@@ -366,7 +366,7 @@ export default {
       }
 
       if (crudType === "DELETE") {
-        console.log("updateTagbotMapping() crudType:", crudType);
+        //console.log("updateTagbotMapping() crudType:", crudType);
         //deleteTagbotRulesDialog.value = false;
         deleteTagbotRuleDialog.value = false;
         tagbotCrudMode.value = "";
@@ -374,10 +374,10 @@ export default {
         // DELETE this rule via API
         return TagbotService.deleteTagbotMapping(dat.id)
           .then(response => {
-            console.log(
-              "TagbotService.deleteTagbotMapping(" + dat.id + "):",
-              response.data
-            );
+            //console.log(
+            //  "TagbotService.deleteTagbotMapping(" + dat.id + "):",
+            //  response.data
+            //);
             if (response.data.success) {
               messages.value.push({
                 severity: "success",
@@ -408,11 +408,11 @@ export default {
       });
       TagbotService.getTagbotMappingsAll()
         .then(response => {
-          console.log("TagbotService.getTagbotMappingsAll():", response.data);
+          //console.log("TagbotService.getTagbotMappingsAll():", response.data);
           tagbotRules.value = response.data.data;
         })
         .catch(error => {
-          console.log(error);
+          console.error(error);
         });
     };
 
