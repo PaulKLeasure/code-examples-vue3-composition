@@ -302,10 +302,10 @@ export default {
         individualRule.value = {};
         return TagbotService.createTagbotMapping(dat)
           .then(response => {
-            console.log(
-              "TagbotService.createTagbotMapping(" + dat + "):",
-              response.data
-            );
+            //console.log(
+            //  "TagbotService.createTagbotMapping(" + dat + "):",
+            //  response.data
+            //);
             if (response.data.success) {
               messages.value.push({
                 severity: "success",
