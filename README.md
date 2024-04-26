@@ -10,7 +10,7 @@ _This repository contains individual sample files that are not organized in thei
 - **IvaultService.js** uses Axios to consume the **iVault API**
 - **AltTextBotService.js** uses Axios to consume the **iVault API**
 
-### Code that consumes the services
+### Code that consume the services
 - **useAssetUploader** imports the **IvaultService**
 - **useAltTextBot** imports the **IvaultService** and **AltTextBotService**
 - **rulesCrudeTable** imports the **TagbotService** (see line 221)
