@@ -7,8 +7,6 @@ if (userObj.token) {
   authHeader = 'Token ' + userObj.token;
 }
 
-console.log('IvaultService:UserObj.token: ', userObj.token);
-
 const apiClient = axios.create({
   baseURL: process.env.VUE_APP_API_URL,
   withCredentials: false,
