@@ -7,12 +7,6 @@ if (userObj.token) {
   authHeader = 'Token ' + userObj.token;
 }
 
-console.log('AltTextBotService:UserObj.token: ', userObj.token);
-console.log(
-  'baseURL: process.env.VUE_APP_API_URL',
-  process.env.VUE_APP_API_URL
-);
-
 const altTextApiClient = axios.create({
   baseURL: process.env.VUE_APP_API_URL,
   withCredentials: false,
